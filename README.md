@@ -1,5 +1,5 @@
 # CN-US-EU-JP-Patent_2020-2025
-> **Abstract**: This dataset contains patent documents from **China, the United States, Europe, and Japan** spanning from January 1, 2020, to March 5, 2025. Data source: Google Patents. Data format: HTML. Data volume: approximately 11 million records. The dataset has undergone preprocessing to remove some low-quality or corrupted patents.
+> **Abstract**: This dataset contains patent documents from ***China, the United States, Europe, and Japan*** spanning from January 1, 2020, to March 5, 2025. Data source: Google Patents. Data format: TXT. Data volume: approximately 11 million records. The dataset has undergone preprocessing to remove some low-quality or corrupted patents.
 
 ## Dataset address
 [[`Kaggle`](https://www.kaggle.com/api/v1/datasets/download/weiran11/patent-test)]
@@ -19,10 +19,10 @@ curl -L -o ~/Downloads/patent-test.zip\
 # Dataset introduction
 
 ## Dataset size
-|    File type    | Size |   
-| :-----------: | :-----------------: |
-|  zip  |      --G       | 
-| txt |      --G       | 
+|    File type    |    Size    |   
+| :-----------: | :-------------: |
+|  zip  |       &nbsp; 150 GB &nbsp;       | 
+|  txt  |       &nbsp; 750 GB &nbsp;       | 
 
 ## Folder hierarchy
 ```
@@ -56,39 +56,48 @@ curl -L -o ~/Downloads/patent-test.zip\
 ## File structure
 Each patent corresponds to a text file with the same name.  
 The file content is a single-line dictionary, where the key is the field name and the value is the field content.  
-{'Field 1': 'Content 1', 'Field 2': ['Content 2-1', 'Content 2-2'], 'Field 3': [{'Field 3-1-1': 'Content 3-1-1', 'Field 3-1-2': 'Content 3-1-2'}, {'Field 3-2', 'Content 3-2'}]}
+```python
+{
+  'Field 1': 'Content 1', 
+  'Field 2': ['Content 2-1', 'Content 2-2'], 
+  'Field 3': [{'Field 3-1-1': 'Content 3-1-1', 'Field 3-1-2': 'Content 3-1-2'}, {'Field 3-2', 'Content 3-2'}]
+}
+*The txt file contains a dictionary that occupies only a single line.
+```
 
 ## Schema
-|    Num    | Key |  Schema   |  Notes  |
-| :-----------: | :-----------------: | :-------------: | :-------------: |
-| 1  |  publication_number            |  |  |
-| 2  |  title                         |  |  |
-| 3  |  authority                     |  |  |
-| 4  |  prior_art_keywords            |  |  |
-| 5  |  legal_status                  |  |  |
-| 6  |  application_number            |  |  |
-| 7  |  inventors                     |  |  |
-| 8  |  current_assignee              |  |  |
-| 9  |  original_assignee             |  |  |
-| 10 |  abstract                      |  |  |
-| 11 |  priority_date                 |  |  |
-| 12 |  filing_date                   |  |  |
-| 13 |  publication_date              |  |  |
-| 14 |  classifications               |  |  |
-| 15 |  definitions                   |  |  |
-| 16 |  landscapes                    |  |  |
-| 17 |  description                   |  |  |
-| 18 |  claims                        |  |  |
-| 19 |  n_claims                      |  |  |
-| 20 |  family_id                     |  |  |
-| 21 |  citations                     |  |  |
-| 22 |  n_citations                   |  |  |
-| 23 |  cited_by                      |  |  |
-| 24 |  n_citedby                     |  |  |
-| 25 |  families_citing_this_family   |  |  |
-| 26 |  n_fctf                        |  |  |
-| 27 |  family_cites_families         |  |  |
-| 28 |  n_fcf                         |  |  |
+|    Num    | Schema |  Example   |
+| :-----------: | :-----------------: | :-------------: |
+| 1  |  publication_number            | US20240023456A1 |
+| 2  |  title                         | Semiconductor device and method... |
+| 3  |  authority                     | ['US', 'United States'] |
+| 4  |  prior_art_keywords            | ['layer', 'mtj', 'sot'...] |
+| 5  |  legal_status                  | Pending |
+| 6  |  application_number            | US17/887,530 |
+| 7  |  inventors                     | ['Hui-Lin WANG'] |
+| 8  |  current_assignee              | United Microelectronics Corp |
+| 9  |  original_assignee             | United Microelectronics Corp |
+| 10 |  abstract                      | A method for fabricating... |
+| 11 |  priority_date                 | 2022-07-13 |
+| 12 |  filing_date                   | 2022-08-15 |
+| 13 |  publication_date              | 2024-01-18 |
+| 14 |  classifications               | [{'code': 'H10N50/01', 'description': 'Manufacture or treatment'}...] |
+| 15 |  definitions                   | [{'subject': 'the invention', 'definition': 'relates to a semiconductor...', 'num_attr': '0001'}...] |
+| 16 |  landscapes                    | [{'name': 'Engineering & Computer Science', 'type': 'AREA'}...] |
+| 17 |  description                   | BACKGROUND OF THE INVENTION\n1. Field of the Invention... |
+| 18 |  claims                        | What is claimed is:\n \n 1. A method for fabricating semiconductor device... |
+| 19 |  n_claims                      | 19 |
+| 20 |  family_id                     | ID=89509667 |
+| 21 |  citations                     | ['US20170117323A1\n(en)\n*\n2015-10-22...', ...] |
+| 22 |  n_citations                   | 4 |
+| 23 |  cited_by                      | None |
+| 24 |  n_citedby                     | 0 |
+| 25 |  families_citing_this_family   | None |
+| 26 |  n_fctf                        | 0 |
+| 27 |  family_cites_families         | None |
+| 28 |  n_fcf                         | 0 | 
+
+*For strings, default=None; for numbers, default=0. 
 
 # Dataset cleaning
 n_claims (number of claims)  
