@@ -1,11 +1,11 @@
 # CN-US-EU-JP-Patent_2020-2025
+# !!```Under construction,not yet uploaded```!!
 > **Abstract**: This dataset contains patent documents from ***China, the United States, Europe, and Japan*** spanning from January 1, 2020, to March 5, 2025. Data source: Google Patents. Data format: TXT. Data volume: approximately 11 million records. The dataset has undergone preprocessing to remove some low-quality or corrupted patents.
 
 ## Dataset address
 [[`Kaggle`](https://www.kaggle.com/api/v1/datasets/download/weiran11/patent-test)]
 
-# Downloading
-## Path
+## Downloading
 Donwload repo:
 ```sh
 kaggle datasets download weiran11/patent-test
@@ -17,6 +17,7 @@ curl -L -o ~/Downloads/patent-test.zip\
 ```
 
 # Dataset introduction
+Due to the large number of patents in the dataset, the original HTML files contained a significant amount of redundant fields, which occupied substantial storage space. Therefore, we extracted the key fields of the patents, converted them into TXT files stored in a dictionary format, and finally compressed them into a ZIP file. This step reduced the dataset size to 6% of its original size.
 
 ## Dataset size
 |    File type    |    Size    |   
@@ -99,37 +100,37 @@ The file content is a single-line dictionary, where the key is the field name an
 
 *For strings, default=None; for numbers, default=0. 
 
-# Dataset cleaning
+## Dataset cleaning
 n_claims (number of claims)  
 n_citations / n_citedby (number of citations)  
 n_fctf (number of families_citing_this_family)  
 n_fcf (number of family_cites_families)  
 Recommended: n_claims <= 5 and max(n_citations / n_citedby, n_fctf, n_fcf) <= 3
 
-# Copyright Notice
+## Copyright Notice
 
 **Patent Dataset**
 
 This dataset contains patents data crawled from Google Patents.
 
 **Data Source**
-The data is sourced from Google Patents Public Datasets. For more information, see [Google Patents Public Datasets](https://github.com/google/patents-public-data)[^5^].
+The data is sourced from Google Patents Public Datasets. For more information, see [Google Patents Public Datasets](https://github.com/google/patents-public-data).
 
 
-# Terms of Use
+## Terms of Use
 
-**License**
+**License**  
 This dataset is licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). You are free to use, modify, and distribute this dataset, provided that you give appropriate credit to the original source.
 
-**Usage**
+**Usage**  
 Please ensure that any use of this dataset complies with the terms of the CC BY 4.0 license. If you make any modifications or create derivative works, please clearly indicate the changes and provide attribution to the original dataset.
 
-**Important Notes**
+**Important Notes**  
 - The data is provided "as is" without any warranty or guarantee of accuracy.
 - Any use of this dataset must comply with the terms and conditions of Google Patents Public Datasets.
 
 
-# Citation
+## Citation
 ```
 Qmai. (2025). CN-US-EU-JP-Patent_2020-2025 (Version 1.0) [Data set]. GitHub. https://github.com/liuquan-ustc-qmai/CN-US-EU-JP-Patent_2020-2025
 ```
