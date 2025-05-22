@@ -132,5 +132,5 @@ Please ensure that any use of this dataset complies with the terms of the CC BY 
 
 ## Citation
 ```
-Qmai. (2025). CN-US-EU-JP-Patent_2020-2025 (Version 1.0) [Data set]. GitHub. https://github.com/liuquan-ustc-qmai/CN-US-EU-JP-Patent_2020-2025
+Quan Liu, Hongfei Bao, Jiameng Zhang. University of Science and Technology China, Qmai Inc. (2025). CN-US-EU-JP-Patent_2020-2025 (Version 1.0) [Data set]. GitHub. https://github.com/liuquan-ustc-qmai/CN-US-EU-JP-Patent_2020-2025
 ```
