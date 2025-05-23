@@ -113,11 +113,33 @@ The file content is a single-line dictionary, where the key is the field name an
 *For strings, default=None; for numbers, default=0. 
 
 ## Dataset cleaning
-n_claims (number of claims)  
-n_citations / n_citedby (number of citations)  
-n_fctf (number of families_citing_this_family)  
-n_fcf (number of family_cites_families)  
-Recommended: n_claims <= 5 and max(n_citations / n_citedby, n_fctf, n_fcf) <= 3
+`n_claims` (number of claims)  
+`n_citations / n_citedby` (number of citations)  
+`n_fctf` (number of families_citing_this_family)  
+`n_fcf` (number of family_cites_families)  
+
+**Recommendations:**  
+`Task Indicators (Key Field Missing)`  
+```
+publication_number and classification are None
+```  
+`Quality Indicators (Low Requirement Count or Citation Count)​​`  
+```
+For recent two years:  
+n_claims <= 0 and max(n_citations/n_citedby, n_fctf, n_fcf) <= 0  
+For other years:  
+n_claims <= 5 and max(n_citations/n_citedby, n_fctf, n_fcf) <= 2  
+```
+**Code**
+`get_more_info.py`
+```
+html -> txt
+base on python Beautifulsoup
+```
+`store_use.py`
+```
+clean
+```
 
 ## Copyright Notice
 
