@@ -130,7 +130,7 @@ n_claims <= 0 and max(n_citations/n_citedby, n_fctf, n_fcf) <= 0
 For other years:  
 n_claims <= 5 and max(n_citations/n_citedby, n_fctf, n_fcf) <= 2  
 ```
-**Code**
+**Code**  
 `get_more_info.py`
 ```
 html -> txt
@@ -143,23 +143,22 @@ clean
 
 ## Copyright Notice
 
-**Patent Dataset**
+**`Patent Dataset`**  
+This dataset contains patents data crawled from Google Patents.  
 
-This dataset contains patents data crawled from Google Patents.
-
-**Data Source**
+**`Data Source`**  
 The data is sourced from Google Patents Public Datasets. For more information, see [Google Patents Public Datasets](https://github.com/google/patents-public-data).
 
 
 ## Terms of Use
 
-**License**  
+**`License`**  
 This dataset is licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). You are free to use, modify, and distribute this dataset, provided that you give appropriate credit to the original source.
 
-**Usage**  
+**`Usage`**  
 Please ensure that any use of this dataset complies with the terms of the CC BY 4.0 license. If you make any modifications or create derivative works, please clearly indicate the changes and provide attribution to the original dataset.
 
-**Important Notes**  
+**`Important Notes`**  
 - The data is provided "as is" without any warranty or guarantee of accuracy.
 - Any use of this dataset must comply with the terms and conditions of Google Patents Public Datasets.
 
