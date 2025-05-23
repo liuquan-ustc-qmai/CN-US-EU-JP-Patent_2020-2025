@@ -1,11 +1,21 @@
 # CN-US-EU-JP-Patent_2020-2025
 # !!```Under construction,not yet uploaded```!!
-> **Abstract**: This dataset contains patent documents from ***China, the United States, Europe, and Japan*** spanning from January 1, 2020, to March 5, 2025. Data source: Google Patents. Data format: TXT. Data volume: approximately 11 million records. The dataset has undergone preprocessing to remove some low-quality or corrupted patents.
+> **Abstract**: This dataset contains patent documents from ***China, the United States, Europe, and Japan*** spanning from January 1, 2020, to March 5, 2025. Data source: Google Patents. Data format: TXT. Data volume: approximately 8 million records. The dataset has undergone preprocessing to remove some low-quality or corrupted patents.
 
 ## Dataset address
-[[`Kaggle`](https://www.kaggle.com/api/v1/datasets/download/weiran11/patent-test)]
+[[`OpenXLab`](https://openxlab.org.cn/datasets/lweiranl/CUEJ2025/tree/main)]
+[[`Kaggle(not yet uploaded)`](https://www.kaggle.com/api/v1/datasets/download/weiran11/patent-test)]
 
 ## Downloading
+### OpenXLab
+Download repo:
+```sh
+openxlab dataset get -r lweiranl/CUEJ2025 -t /path/to/local/folder
+```
+Download file：
+openxlab dataset download -r lweiranl/CUEJ2025 -s ./patent/0_txt.zip -t /path/to/local/folder
+
+### Kaggle
 Donwload repo:
 ```sh
 kaggle datasets download weiran11/patent-test
