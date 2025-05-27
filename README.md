@@ -144,6 +144,7 @@ n_claims <= 0 and max(n_citations/n_citedby, n_fctf, n_fcf) <= 0
 For other years:  
 n_claims <= 5 and max(n_citations/n_citedby, n_fctf, n_fcf) <= 2  
 ```
+*We applied the same cleaning conditions to this dataset.
 
 **Code**  
 `get_more_info.py`
