@@ -1,10 +1,8 @@
 # CN-US-EU-JP-Patent_2020-2025
-# !!```Under construction,not yet uploaded```!!
-> **Abstract**: This dataset contains patent documents from ***China, the United States, Europe, and Japan*** spanning from January 1, 2020, to March 5, 2025. Data source: Google Patents. Data format: TXT. Data volume: approximately 8 million records. The dataset has undergone preprocessing to remove some low-quality or corrupted patents.
+> **Abstract**: This dataset contains patent documents from ***China, the United States, Europe, and Japan*** spanning from January 1, 2020, to March 5, 2025. Data source: Google Patents. Data format: TXT. Data volume: approximately 7 million records. The dataset has undergone preprocessing to remove some low-quality or corrupted patents.
 
 ## Dataset address
 [[`OpenXLab`](https://openxlab.org.cn/datasets/lweiranl/CUEJ2025/tree/main)]  
-[[`Kaggle(not yet uploaded)`](https://www.kaggle.com/api/v1/datasets/download/weiran11/patent-test)]
 
 ## Downloading
 ### OpenXLab
@@ -17,27 +15,20 @@ Download file：
 openxlab dataset download -r lweiranl/CUEJ2025 -s ./patent/0_txt.zip -t /path/to/local/folder
 ```
 
-### Kaggle
-Donwload repo:
-```sh
-kaggle datasets download weiran11/patent-test
-```
-or
-```sh
-curl -L -o ~/Downloads/patent-test.zip\
-  https://www.kaggle.com/api/v1/datasets/download/weiran11/patent-test
-```
-
 # Dataset introduction
-Due to the large number of patents in the dataset, the original HTML files contained a significant amount of redundant fields, which occupied substantial storage space. Therefore, we extracted the key fields of the patents, converted them into TXT files stored in a dictionary format, and finally compressed them into a ZIP file. This step reduced the dataset size to 6% of its original size.
+Due to the large number of patents in the dataset, the original HTML files contained a significant amount of redundant fields, which occupied substantial storage space. Therefore, we extracted the key fields of the patents, converted them into TXT files stored in a dictionary format, and finally compressed them into a ZIP file. This step reduced the dataset size to 5% of its original size.
 
 ## Dataset size
 |    File type    |    Size    |   
 | :-----------: | :-------------: |
-|  zip  |       &nbsp; 150 GB &nbsp;       | 
-|  txt  |       &nbsp; 750 GB &nbsp;       | 
+|  HTML  |       &nbsp; 2391 GB &nbsp;       | 
+|  HTML(zip)  |       &nbsp; 306 GB &nbsp;       | 
+|  TXT  |       &nbsp; 834 GB &nbsp;       |
+|  TXT(cleaning)  |       &nbsp; **567 GB** &nbsp;       |
+|  TXT(cleaning,zip)  |       &nbsp; **118 GB** &nbsp;       |
 
 ## Folder hierarchy
+<!--origin
 ```
 .
 ├── README.md
@@ -66,6 +57,29 @@ Due to the large number of patents in the dataset, the original HTML files conta
 │   └── 2025-0_txt.zip
 │       └── [JP20250xxxxx.html]
 ```
+-->
+```
+patent_use
+├── cn_use_1.zip
+│   └── [CN119xxxxxxx.txt]
+├── ...
+├── cn_use_4.zip
+│   └── [CN111xxxxxxx.txt]
+├── us_use_1.zip
+│   └── [US202500xxxxx.txt]
+├── ...
+├── us_use_5.zip
+│   └── [US202000xxxxx.txt]
+├── eu_use_1.zip
+│   └── [EP44xxxxx.txt]
+├── eu_use_2.zip
+│   └── [EP38xxxxx.txt]
+├── jp_use_1.zip
+│   └── [JP20250xxxxx.txt]
+├── jp_use_2.zip
+│   └── [JP20200xxxxx.txt]
+```
+
 ## File structure
 Each patent corresponds to a text file with the same name.  
 The file content is a single-line dictionary, where the key is the field name and the value is the field content.  
@@ -130,6 +144,7 @@ n_claims <= 0 and max(n_citations/n_citedby, n_fctf, n_fcf) <= 0
 For other years:  
 n_claims <= 5 and max(n_citations/n_citedby, n_fctf, n_fcf) <= 2  
 ```
+
 **Code**  
 `get_more_info.py`
 ```
@@ -138,7 +153,7 @@ base on python Beautifulsoup
 ```
 `store_use.py`
 ```
-clean
+data cleaning
 ```
 
 ## Copyright Notice
