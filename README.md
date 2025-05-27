@@ -12,7 +12,7 @@ openxlab dataset get -r lweiranl/CUEJ2025 -t /path/to/local/folder
 ```
 Download file：
 ```sh
-openxlab dataset download -r lweiranl/CUEJ2025 -s ./patent/0_txt.zip -t /path/to/local/folder
+openxlab dataset download -r lweiranl/CUEJ2025 -s ./patent_use/cn_use_1.zip -t /path/to/local/folder
 ```
 
 # Dataset introduction
