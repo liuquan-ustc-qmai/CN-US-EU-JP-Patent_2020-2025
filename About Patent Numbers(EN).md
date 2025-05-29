@@ -46,4 +46,5 @@
    2025: 000001 - 029227  
    ```  
 **Total: 11,804,188 patents**  
-*(*Not categorized by year,cannot be precisely determined)*
+*(*Not categorized by year,cannot be precisely determined)*  
+After data cleaning, a total of 6,992,851 high-quality patents were retained.
