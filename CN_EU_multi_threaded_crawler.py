@@ -27,7 +27,7 @@ user_agent_list = [
     "Mozilla/5.0 (X11; U; Linux x86_64; zh-CN; rv:1.9.2.10) Gecko/20100922 Ubuntu/10.10 (maverick) Firefox/3.6.10",
     # Safari
     "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534.57.2 (KHTML, like Gecko) Version/5.1.7 Safari/534.57.2",
-    # chrome
+    # Chrome
     "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36",
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11",
     "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.16 (KHTML, like Gecko) Chrome/10.0.648.133 Safari/534.16",
@@ -35,21 +35,21 @@ user_agent_list = [
     # 360
     "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1599.101 Safari/537.36",
     "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko",
-    # 淘宝浏览器
+    # Taobao
     "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.11 TaoBrowser/2.0 Safari/536.11",
-    # 猎豹浏览器
+    # Liebao
     "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.71 Safari/537.1 LBBROWSER",
     # "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; LBBROWSER)",
     # "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; QQDownload 732; .NET4.0C; .NET4.0E; LBBROWSER)",
-    # QQ浏览器
+    # QQ
     # "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; QQBrowser/7.0.3698.400)",
     # "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; QQDownload 732; .NET4.0C; .NET4.0E)",
-    # sogou浏览器
+    # sogou
     "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.84 Safari/535.11 SE 2.X MetaSr 1.0",
     # "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; SV1; QQDownload 732; .NET4.0C; .NET4.0E; SE 2.X MetaSr 1.0)",
-    # maxthon浏览器
+    # maxthon
     # "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.3.4000 Chrome/30.0.1599.101 Safari/537.36",
-    # UC浏览器
+    # UC
     "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 UBrowser/4.0.3214.0 Safari/537.36",
 
     # IPhone
@@ -62,7 +62,7 @@ user_agent_list = [
     # Android
     "Mozilla/5.0 (Linux; U; Android 2.2.1; zh-cn; HTC_Wildfire_A3333 Build/FRG83D) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
     "Mozilla/5.0 (Linux; U; Android 2.3.7; en-us; Nexus One Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
-    # QQ浏览器 Android版本
+    # QQ-Android
     "MQQBrowser/26 Mozilla/5.0 (Linux; U; Android 2.3.7; zh-cn; MB200 Build/GRJ22; CyanogenMod-7) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
     # Android Opera Mobile
     "Opera/9.80 (Android 2.3.4; Linux; Opera Mobi/build-1107180945; U; en-GB) Presto/2.8.149 Version/11.10",
@@ -76,7 +76,7 @@ user_agent_list = [
     "Mozilla/5.0 (SymbianOS/9.4; Series60/5.0 NokiaN97-1/20.0.019; Profile/MIDP-2.1 Configuration/CLDC-1.1) AppleWebKit/525 (KHTML, like Gecko) BrowserNG/7.1.18124",
     # Windows Phone Mango
     # "Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone OS 7.5; Trident/5.0; IEMobile/9.0; HTC; Titan)",
-    # UC浏览器
+    # UC
     # "UCWEB7.0.2.37/28/999",
     "NOKIA5700/ UCWEB7.0.2.37/28/999",
     # UCOpenwave
@@ -103,12 +103,12 @@ user_agent_list = [
     "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/535.24 (KHTML, like Gecko) Chrome/19.0.1055.1 Safari/535.24"
 ]
 
-# 从多个uas里随机选择一个ua,能够降低被墙的几率
+# Randomly selecting a ua from multiple uas
 header={
     'User-Agent':random.choice(user_agent_list)
     }
 
-# ip代理池
+# IP proxy pool
 proxies = {
   "http": "http://127.0.0.1:7890",
   "https": "http://127.0.0.1:7890",
@@ -121,15 +121,15 @@ file_last_run_finish_patent = './error/last_run_finish_patent_id.txt'
 html_result_path = './html'
 
 
-## 避免被墙现在主要通过2个举措， 1是增加ip代理池，每爬一批数据换一个ip，另外是每次更换请求头来模拟；
+## Change the IP for each batch of data crawled, and also change the request headers each time
 class Crawl_Thread(threading.Thread):
     '''
-    抓取线程类，需要继承线程类Thread
+    Inherit from the Thread class
     '''
     def __init__(self, thread_id, queue, first_id, block_num):
-        threading.Thread.__init__(self) # 需要对父类的构造函数进行初始化
+        threading.Thread.__init__(self) # Need to initialize the constructor of the parent class.
         self.thread_id = thread_id
-        self.queue = queue # 任务队列
+        self.queue = queue # Task queue
         self.first_id=first_id
         self.block_num = block_num
         self.init_folder()
@@ -140,28 +140,28 @@ class Crawl_Thread(threading.Thread):
 
     def run(self):
         '''
-        线程在调用过程中就会调用对应的run方法
+        The thread will call the corresponding run method during the invocation process
         '''
-        #print('启动线程：',self.thread_id)
-        # 每个线程会执行获取每个专利所在页面的源代码
+        #print('Start thread：',self.thread_id)
+        # Each thread will execute to retrieve the source code of the page where each patent is located
         self.crawl_spider()
-        #print('退出了该线程：',self.thread_id)
+        #print('Exited the thread：',self.thread_id)
 
     def crawl_spider(self):
         error_times=0
         while True:
-            if self.queue.empty(): #如果队列为空，表明该年份专利爬完了,则跳出
+            if self.queue.empty(): #If the queue is empty, it indicates that the patent search for that year is complete, then exit
                 break
             else:
                 patent_id = self.queue.get()
-                #print('当前工作的线程为：',self.thread_id," 正在采集：",patent_id)
+                #print('The current working thread is:',self.thread_id," Collecting：",patent_id)
                 # finish=False
                 # while finish==False:
-                # 每个专利详情页的url
-                #url = f'https://patents.google.com/patent/CN{self.first_id}{patent_id:08}' #切换CN/EU
+                # The URL of each patent detail page
+                #url = f'https://patents.google.com/patent/CN{self.first_id}{patent_id:08}' #Switch CN/EU
                 url = f'https://patents.google.com/patent/EP{patent_id:07}'
                 try:
-                    # 获得专利详情页的源代码text
+                    # Obtain the source code text of the patent detail page
                     # response = requests.get(url,headers=header,proxies=proxies)
                     count = 0
                     while True:
@@ -175,12 +175,12 @@ class Crawl_Thread(threading.Thread):
                         count += 1
                         if count >= 5:
                             break
-                    # text_queue.put(item) # 将采集的结果放入text_queue中
+                    # text_queue.put(item) # Place the collected results into the text_queue
                     finish = True
                 except Exception as e:
-                    # 连接次数过多,被服务器拒绝连接,增加延迟再访问
-                    #print('采集线程错误',e)
-                    # 放回队列让之后线程爬取
+                    # Too many connection attempts, the server refused the connection, increase the delay before accessing again
+                    #print('Collection thread error',e)
+                    # Put it back in the queue for the subsequent thread to crawl
                     # self.queue.put(patent_id)
                     time.sleep(20)
                     # time.sleep(1)
@@ -188,8 +188,8 @@ class Crawl_Thread(threading.Thread):
                 if response.status_code != 200:
                     error_times += 1
                     if error_times == 50:
-                        # 将队列置为空
-                        print("已达到该年份最大专利号")
+                        # Set the queue to empty
+                        print("The maximum patent number for that year has been reached")
                         self.queue = Queue()
                         print(patent_id)
                         with open(file_last_run_finish_patent, mode='w', encoding='utf-8') as f_out:
@@ -198,27 +198,23 @@ class Crawl_Thread(threading.Thread):
                     else:
                         continue
                 else:
-                    # 如果未达到最大值,则得到了页面源代码,则保存下text,之后有需要可以使用
-                    #with open(f'{html_result_path}/{self.block_num}/CN{self.first_id}{patent_id:08}.html', mode='w', encoding='utf-8') as f_out: #切换CN/EU
+                    # If obtained the page source code, then save the text, which can be used later if needed.
+                    #with open(f'{html_result_path}/{self.block_num}/CN{self.first_id}{patent_id:08}.html', mode='w', encoding='utf-8') as f_out: #Switch CN/EU
                     with open(f'{html_result_path}/{self.block_num}/EP{patent_id:07}.html', mode='w', encoding='utf-8') as f_out:
                         f_out.write(response.text)
 
 
 def main():
-    """
-    申请号说明
-    https://www.lexology.com/library/detail.aspx?g=bd71309d-1657-402e-a6cf-0e37ec2af28c
-     """
     # CN100998275
     # first_id=[1]
     first_id = 1
-    # 当连续2000个patent_id都爬取失败，则表明该年份没有专利，或者网络error，跳出循环
+    # If there are continuous 2000 patent_ids that fail to be crawled, it indicates that there are no patents for that year, or there is a network error, breaking the loop
     global error_flag
     error_flag = False
-    # 每次保证block_size大小的专利完整下载
+    # Ensure the complete download of the patent with a block_size of each time
     block_size = 100000
     max_patent_id = 19522657
-    # 判断文件是否存在，如果不存在则创建
+    # Determine if the file exists, and if not, create it
     if not os.path.exists(file_last_run_start_patent):
         block_num_start = 0
     else:
@@ -226,64 +222,62 @@ def main():
             patent_id=f_in.read()
         block_num_start=max((max_patent_id - int(patent_id))//block_size, 0)
 
-    # 按照年份爬取，从最新的2025年开始爬取
+    # Crawl according to the serial number, starting from the newest
     for block_num in range(block_num_start, 7):
         start_time = time.time()
 
-        # 如果年份的爬取完了，则终止
+        # If the crawling is completed, then terminate
         if error_flag:
             break
-        # 每个block起始id
+        # Starting ID of each block
         start_id = max_patent_id - block_size*(block_num)
         end_id = start_id - block_size
         print(f"Start download block：{block_num}，patent_id：{start_id}-{end_id}")
 
         with open(file_last_run_start_patent, mode='w',encoding='utf-8') as f_out:
             f_out.write(str(start_id))
-        # 结束id=起始id+队列大小,即把所有id存入Queue中
-        # crawl线程个数
+        # End id = start id + queue size, which means putting all ids into the Queue
+        # Number of crawl threads
         crawl_threads_num = 40
-        # 任务队列，存放网页id的队列
+        # Task queue, a queue that stores webpage IDs
         q_size = 1500000
         patent_id_Queue = Queue(q_size)
         start_id = min(start_id, max_patent_id)
         patent_ids = [i for i in range(end_id, start_id)]
         patent_ids.reverse()
         for patent_id_ in patent_ids:
-            # 构造任务队列
+            # Construct a task queue
             patent_id_Queue.put(patent_id_)
-        # 初始化采集线程
+        # Initialize collection thread
         crawl_threads = []
-        crawl_name_list = [f'crawler_{i}' for i in range(crawl_threads_num)] # 总共构造i个爬虫线程
+        crawl_name_list = [f'crawler_{i}' for i in range(crawl_threads_num)] # A total of i crawler threads are constructed
         for thread_id in crawl_name_list:
-            thread = Crawl_Thread(thread_id,patent_id_Queue,first_id,block_num) # 实例化爬虫线程
-            thread.start() # 启动线程
+            thread = Crawl_Thread(thread_id,patent_id_Queue,first_id,block_num) # Instantiate the crawler thread
+            thread.start() # Start thread
             crawl_threads.append(thread)
 
-        # 等待队列情况，先进行网页的抓取
-        while not patent_id_Queue.empty(): # 判断是否为空
-            pass # 不为空，则继续阻塞
+        # Waiting for the queue situation, first proceed with web scraping
+        while not patent_id_Queue.empty(): # Determine if it is empty
+            pass # If not empty, continue to block
         craw_time=time.time()
 
-        # 等待所有线程结束
+        # Wait for all threads to finish
         for t in crawl_threads:
             t.join()
 
-        # 通知线程退出
+        # Notify thread to exit
         global flag
         flag = True
         end_time=time.time()
 
-        #print(f'退出主线程！    time:{end-start}')
+        #print(f'Exit the main thread！    time:{end-start}')
         print(f"block:{block_num}\tpatent_id:{start_id}-{end_id} has finished")
         print(f"Cost time of the block:{end_time-start_time}\ttotal {block_size}'s patent\tavg time:{block_size/(end_time-start_time)} num/s")
-        # 该block下载时间：211.908784866333,共1000个专利，平均耗时：4.719011534282433个/s
-
-# text_queue = Queue() # 存放解析数据的queue
+        
+# text_queue = Queue() # Queue for storing parsed data
 flag = False
 error_flag=False
 
 
 if __name__ == '__main__':
-    # 必须科学上网
     main()
