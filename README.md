@@ -139,20 +139,20 @@ The file content is a single-line dictionary, where the key is the field name an
 | Aspect | Task Indicators | Quality Indicators |
 | :---- | :------------- | :---------------- |
 | Reason | Key Field Missing | Low Requirement Count or Citation Count |
-| For recent two years | `publication_number` is None *or* <br> `classification` is None | `n_claims` <= 0 *or* <br> max(`n_citations`, `n_citedby`, `n_fctf`, `n_fcf`) <= 0 |
-| For other years | `publication_number` is None *or* <br> `classification` is None | `n_claims` <= 5 *or* <br> max(`n_citations`, `n_citedby`, `n_fctf`, `n_fcf`) <= 2 |  
+| Patents in the last two years | `publication_number` is None *or* <br> `classification` is None | `n_claims` <= 0 *or* <br> max(`n_citations`, `n_citedby`, `n_fctf`, `n_fcf`) <= 0 |
+| Patents in other years | `publication_number` is None *or* <br> `classification` is None | `n_claims` <= 5 *or* <br> max(`n_citations`, `n_citedby`, `n_fctf`, `n_fcf`) <= 2 |  
 
-*We applied the same cleaning conditions to this dataset.
+*We applied the same cleaning conditions to this dataset. Patents that meet any of the above conditions will be cleansed.
 
 **Code**  
-`get_more_info.py`
+`extract_fields.py`
 ```
 html -> txt
-base on python Beautifulsoup
+Extracting important fields from patents using the Beautifulsoup library based on Python.
 ```
-`store_use.py`
+`clean_data.py`
 ```
-data cleaning
+Data cleansing based on the established conditional thresholds.
 ```
 `CN_EU_multi_threaded_crawler.py`
 ```
