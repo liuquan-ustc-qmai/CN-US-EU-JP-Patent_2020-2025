@@ -9,7 +9,7 @@ import traceback
 
 def extract_patent_info(html_content):
     soup = BeautifulSoup(html_content, 'html.parser')
-    # 提取专利基本信息
+    # Extract basic fields of the patent
     patent_info = {
         'publication_number': soup.find('dd', itemprop='publicationNumber').text if soup.find('dd', itemprop='publicationNumber') else None,
         'title': soup.find('span', itemprop='title').text.strip() if soup.find('span', itemprop='title') else None,
@@ -49,13 +49,13 @@ def extract_patent_info(html_content):
     }
     return patent_info
 '''
-备用字段
+#Alternate fields
 'similar_patents': [{
             'number': patent.find('span', itemprop='publicationNumber').text if patent.find('span', itemprop='publicationNumber') else None,
             'title': patent.find('td', itemprop='title').text.strip() if patent.find('td', itemprop='title') else None
         } for patent in soup.find_all('tr', itemprop='similarDocuments')],
 '''
-# 示例使用
+# Example use
 def txt_one(patent_path, txt_folder):
     with open(patent_path, 'r', encoding='utf-8') as file:
             html_content = file.read()
@@ -74,57 +74,57 @@ def txt_folder(folder_path, error_log_file, max_threads=40):
         all_files = [os.path.join(folder_path, f) for f in os.listdir(folder_path) 
                     if os.path.isfile(os.path.join(folder_path, f))]
     except Exception as e:
-        print(f"无法读取文件夹 {folder_path}: {str(e)}")
+        print(f"Unable to read folder {folder_path}: {str(e)}")
         return
 
-    # 创建线程安全的队列和错误日志文件
+    # Create thread-safe queues and error log files
     file_queue = queue.Queue()
     error_lock = threading.Lock()
     
-    # 将文件放入队列
+    # Place the file in a queue
     for file_path in all_files:
         file_queue.put(file_path)
 
-    # 工作线程函数
+    # Worker functions
     def worker():
         while True:
             try:
                 file_path = file_queue.get_nowait()
             except queue.Empty:
-                break  # 队列为空，工作完成
+                break  # The queue is empty, and the work has been completed.
                 
             try:
-                # 处理单个文件
+                # Work with individual files
                 txt_one(file_path,txt_folder)
             except Exception as e:
-                # 记录错误到日志文件
+                # Errors are logged to a log file
                 with error_lock:
                     with open(error_log_file, 'a') as f:
                         f.write(f"{file_path}\n")
-                        traceback.print_exc(file=f)  # 记录完整的错误信息
-                print(f"处理文件 {file_path} 时出错: {str(e)}")
+                        traceback.print_exc(file=f)  # Record the complete error message
+                print(f"Error processing file {file_path}: {str(e)}")
             finally:
                 file_queue.task_done()
 
-    # 创建并启动线程
+    # Create and start a thread
     threads = []
     for i in range(max_threads):
         t = threading.Thread(target=worker)
         t.start()
         threads.append(t)
 
-    # 等待所有线程完成
+    # Wait for all threads to complete
     for t in threads:
         t.join()
 
 
     endt=time.time()
-    print(f"处理完成。cost time:{endt-begint}。错误日志保存在 {error_log_file}")
+    print(f"Completed. Cost time:{endt-begint}. Error log saved in {error_log_file}")
 
 
 if __name__ == '__main__':
     #file_path = 'CN118522650.html'
     #txt_one(file_path, '.')
-    folder_path = './15' #此处修改文件夹名
+    folder_path = './15' # Modify the folder name here
     error_log_file = folder_path[-1] + '_error_log.txt'
     txt_folder(folder_path, error_log_file)
