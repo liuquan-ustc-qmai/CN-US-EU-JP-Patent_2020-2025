@@ -127,23 +127,21 @@ The file content is a single-line dictionary, where the key is the field name an
 *For strings, default=None; for numbers, default=0. 
 
 ## Dataset cleaning
-`n_claims` (number of claims)  
-`n_citations / n_citedby` (number of citations)  
-`n_fctf` (number of families_citing_this_family)  
-`n_fcf` (number of family_cites_families)  
+| Conditional fields | Introduction |
+| :----------------: | :----------: |
+| n_claims | number of claims |  
+| n_citations | number of citations |
+| n_citedby | number of citations |
+| n_fctf | number of families_citing_this_family |
+| n_fcf | number of family_cites_families |
 
 **Recommendations:**  
-`Task Indicators (Key Field Missing)`  
-```
-publication_number and classification are None
-```  
-`Quality Indicators (Low Requirement Count or Citation Count)​​`  
-```
-For recent two years:  
-n_claims <= 0 and max(n_citations/n_citedby, n_fctf, n_fcf) <= 0  
-For other years:  
-n_claims <= 5 and max(n_citations/n_citedby, n_fctf, n_fcf) <= 2  
-```
+| Aspect | Task Indicators | Quality Indicators |
+| :---- | :------------- | :---------------- |
+| Reason | Key Field Missing | Low Requirement Count or Citation Count |
+| For recent two years | `publication_number` is None *or* <br> `classification` is None | `n_claims` <= 0 *or* <br> max(`n_citations`, `n_citedby`, `n_fctf`, `n_fcf`) <= 0 |
+| For other years | `publication_number` is None *or* <br> `classification` is None | `n_claims` <= 5 *or* <br> max(`n_citations`, `n_citedby`, `n_fctf`, `n_fcf`) <= 2 |  
+
 *We applied the same cleaning conditions to this dataset.
 
 **Code**  
@@ -155,6 +153,16 @@ base on python Beautifulsoup
 `store_use.py`
 ```
 data cleaning
+```
+`CN_EU_multi_threaded_crawler.py`
+```
+A crawler for downloading patents from China and the European Union (with sequential serial numbers)
+has been implemented using multithreading for acceleration.
+```
+`US_JP_multi_threaded_crawler.py`
+```
+A crawler for downloading patents from the United States and Japan (serial numbers categorized by year)
+has been implemented using multithreading for acceleration.
 ```
 
 ## Copyright Notice
