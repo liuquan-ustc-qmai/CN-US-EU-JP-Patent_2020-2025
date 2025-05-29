@@ -6,7 +6,7 @@ from concurrent.futures import ThreadPoolExecutor
 from queue import Queue
 import time
 
-# 全局锁，用于安全写入结果文件夹
+# Global lock, used for securely writing to the results folder
 write_lock = threading.Lock()
 
 def process_file(file_path, result_dir):
@@ -14,7 +14,7 @@ def process_file(file_path, result_dir):
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read().strip()
             data = ast.literal_eval(content)
-        #更改清洗阈值
+        # Set the cleaning threshold
         if data.get('publication_number') is None or data.get('classifications') is None or data.get('n_claims')<=5 \
 		or max(data.get('n_citations'),data.get('n_citedby'),data.get('n_fctf'),data.get('n_fcf'))<=2: 
             pass
@@ -25,27 +25,27 @@ def process_file(file_path, result_dir):
         pass
 
 def process_files_in_threads(directory, result_dir, max_workers=100):
-    # 确保结果文件存在且为空
+    # Make sure that the result file exists and is empty
     os.makedirs(result_dir, exist_ok=True)
     
-    # 获取所有txt文件
-    start = 111522658 #此处更改编号起止，便于检测是否有缺漏
+    # Get all txt files
+    start = 111522658 # The start and end of the number are changed here to make it easier to detect if there are any gaps
     end = start +500000
     file_paths = []
     for file in range(start, end):
-        file = 'CN' + str(file) + '.txt' #根据国家更改首字母
+        file = 'CN' + str(file) + '.txt' #Change the initials according to the country
         file_paths.append(os.path.join(directory, file))
     
-    # 使用线程池处理文件
+    # Use the thread pool to process files
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         for file_path in file_paths:
             executor.submit(process_file, file_path, result_dir)
 
 if __name__ == "__main__":
-    directory = './15_txt'  # 替换为待清洗文件夹路径
-    result_dir = f'./cn_use' #设置输出文件夹
+    directory = './15_txt'  # Replace with the path of the folder to be cleaned
+    result_dir = f'./cn_use' # Set the output folder
     begint = time.time()
-    process_files_in_threads(directory, result_dir, max_workers=40)  # 可根据CPU核心数调整线程数
+    process_files_in_threads(directory, result_dir, max_workers=40)  # The number of threads can be adjusted according to the number of CPU cores
     endt = time.time()
     file_count = len(os.listdir(result_dir))
-    print(f'文件夹{result_dir}中共有{file_count}个文件,耗时{endt-begint}秒')
+    print(f'There are {file_count} files in folder {result_dir}, taking {endt-begint} seconds.')
