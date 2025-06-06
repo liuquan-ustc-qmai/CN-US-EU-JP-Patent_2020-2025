@@ -144,24 +144,6 @@ The file content is a single-line dictionary, where the key is the field name an
 
 *We applied the same cleaning conditions to this dataset. Patents that meet any of the above conditions will be cleansed.
 
-## Statistical Information
-### Quantity Pie Chart
-<img src="./img/data_pie.png" alt="quantity pie chart" width="500" />
-
-### Citation Chart
-Due to the different focuses of various countries, using max(n_citations, n_citedby, n_fcf, n_fctf).  
-The actual range is approximately [0,8000].  
-<img src="./img/cite.png" alt="citation chart" width="500" />
-
-### Claims Chart
-n_claims.  
-The actual range is approximately [0,2000].  
-<img src="./img/claim.png" alt="claims chart" width="500" />
-
-### IPC Chart
-Some patents cover multiple departments.  
-<img src="./img/ipc.png" alt="IPC chart" width="500" />
-
 **Code**  
 `extract_fields.py`
 ```
@@ -182,6 +164,24 @@ has been implemented using multithreading for acceleration.
 A crawler for downloading patents from the United States and Japan (serial numbers categorized by year)
 has been implemented using multithreading for acceleration.
 ```
+
+## Statistical Information
+### Quantity Pie Chart
+<img src="./img/data_pie.png" alt="quantity pie chart" width="500" />
+
+### Citation Chart
+Due to the different focuses of various countries, using max(n_citations, n_citedby, n_fcf, n_fctf).  
+The actual range is approximately [0,8000].  
+<img src="./img/cite.png" alt="citation chart" width="600" />
+
+### Claims Chart
+n_claims.  
+The actual range is approximately [0,2000].  
+<img src="./img/claim.png" alt="claims chart" width="600" />
+
+### IPC Chart
+Some patents cover multiple departments.  
+<img src="./img/ipc.png" alt="IPC chart" width="600" />
 
 ## Copyright Notice
 
